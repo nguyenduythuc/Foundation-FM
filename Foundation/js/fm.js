@@ -1,6 +1,10 @@
   		var n;
   		var score;
   		var sumscore=0;
+  		// disable button  true and false when start game
+  		document.getElementById("truebutton").disabled=true;
+  		document.getElementById("falsebutton").disabled=true;
+  		// Random function
 		function myFunction()
 			{
 			var x=document.getElementById("demox")
@@ -19,7 +23,9 @@
 			var myArray = [n,g];
 			score =document.getElementById("demoscore")
 			score.innerHTML = myArray[Math.floor(Math.random() * myArray.length)];			
-
+			document.getElementById("actionbutton").disabled=true;
+			document.getElementById("truebutton").disabled=false;
+  			document.getElementById("falsebutton").disabled=false;
 			}
 			function dung()
 			{
@@ -58,25 +64,6 @@
 			}
 		function login()
 		{
-			var a=document.getElementById("FirstName").value;
-			var b=document.getElementById("LastName").value;
-			var keyname='xxx';
-			localStorage.setItem(keyname,a);
-			document.getElementById("FirstName").innerHTML=localStorage.getItem(keyname);
-
-			// var name = 'FirstName';  
-			// var value = localStorage.getItem(name) || $.cookie(name);  
-			// var func = function() {  
-			//         if (Modernizr.localstorage) {  
-			//             localStorage.setItem(name, a)  
-			//         } else {  
-			//             $.cookie(name, a, {  
-			//                 expires: 365  
-			//             });  
-			//         }  
-			//     };  
-			// if(value == null) {  
-			//     introJs().start().oncomplete(func).onexit(func);  
-			// };
-
+			localStorage.xxx=document.getElementById("FirstName").value;
+			document.getElementById("FirstName").innerHTML=localStorage.xxx;
 		}
